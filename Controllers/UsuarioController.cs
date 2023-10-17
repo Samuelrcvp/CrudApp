@@ -1,4 +1,5 @@
 ﻿using CrudApp.Filters;
+using CrudApp.Helper;
 using CrudApp.Models;
 using CrudApp.Repositorio;
 using Microsoft.AspNetCore.Mvc;
@@ -10,10 +11,12 @@ namespace CrudApp.Controllers
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
+        private readonly ISessao _sessao;
 
-        public UsuarioController(IUsuarioRepositorio usuarioRepositorio)
+        public UsuarioController(IUsuarioRepositorio usuarioRepositorio, ISessao sessao)
         {
             _usuarioRepositorio = usuarioRepositorio;
+            _sessao = sessao;   
         }
 
         public IActionResult Index()
@@ -80,8 +83,9 @@ namespace CrudApp.Controllers
                         Email = usuarioSemSenhaModel.Email,
                         Perfil = usuarioSemSenhaModel.Perfil
                     };
-
+                    _sessao.RemoverSessaoDoUsuario();
                     usuario = _usuarioRepositorio.Atualizar(usuario);
+                    _sessao.CriarSessaoDoUsuario(usuario);
                     TempData["MensagemSucesso"] = "Usuário alterado com sucesso!";
                     return RedirectToAction("Index");
                 }
