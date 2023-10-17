@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using CrudApp.Enums;
 
 namespace CrudApp.Models
-{
+{   // Classe feita para a edição de usuários(onde não é possível editar a senha)
     public class UsuarioSemSenhaModel
     {
         public int Id { get; set; }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using CrudApp.Enums;
+using CrudApp.Helper;
 
 namespace CrudApp.Models
 {
@@ -29,7 +30,12 @@ namespace CrudApp.Models
 
         public bool SenhaValida(string senha)
         {
-            return Senha == senha;
+            return Senha == senha.GerarHash();
+        }
+
+        public void SetSenhaHash()
+        {
+            Senha = Senha.GerarHash();
         }
     }
 }
