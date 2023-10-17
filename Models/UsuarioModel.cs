@@ -24,18 +24,19 @@ namespace CrudApp.Models
 
         [Required(ErrorMessage = "Digite a senha do usuário")]
         public string Senha{ get; set;}
+        public string? Salt { get; set;}
         public DateTime DataCadastro { get; set;}
         public DateTime? DataAtualizacao { get; set;}
 
 
-        public bool SenhaValida(string senha)
-        {
-            return Senha == senha.GerarHash();
-        }
-
         public void SetSenhaHash()
         {
-            Senha = Senha.GerarHash();
+            Salt = Criptografia.GerarSalt();
+            Senha = Criptografia.GerarHash(Senha, Salt);
+        }
+        public bool SenhaValida(string senha)
+        {
+            return Senha == Criptografia.GerarHash(senha, Salt);
         }
     }
 }
