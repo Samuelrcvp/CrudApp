@@ -38,5 +38,12 @@ namespace CrudApp.Models
         {
             return Senha == Criptografia.GerarHash(senha, Salt);
         }
+        public string GerarNovaSenha()
+        {
+            string novaSenha = Guid.NewGuid().ToString().Substring(0, 8);
+            Salt = Criptografia.GerarSalt();
+            Senha = Criptografia.GerarHash(novaSenha, Salt);
+            return novaSenha;
+        }
     }
 }
