@@ -1,4 +1,5 @@
-﻿using CrudApp.Models;
+﻿using CrudApp.Data.Map;
+using CrudApp.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CrudApp.Data
@@ -10,7 +11,14 @@ namespace CrudApp.Data
 
         }
 
-        public DbSet<ContatoModel> Contatos { get; set; }
+        public DbSet<ClienteModel> Clientes { get; set; }
         public DbSet<UsuarioModel> Usuarios { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ClienteMap());
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

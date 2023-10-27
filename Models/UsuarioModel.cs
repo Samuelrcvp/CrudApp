@@ -28,6 +28,8 @@ namespace CrudApp.Models
         public DateTime DataCadastro { get; set;}
         public DateTime? DataAtualizacao { get; set;}
 
+        public virtual List<ClienteModel> Clientes { get; set;}
+
 
         public void SetSenhaHash()
         {
