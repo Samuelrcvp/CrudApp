@@ -1,0 +1,26 @@
+﻿@model List<ClienteModel>
+
+<table id="table-clientes-usuario" class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Celular</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var cliente in Model)
+            {
+                <tr>
+                    <th scope="row">@cliente.Id</th>
+                    <td>@cliente.Nome</td>
+                    <td>@cliente.Email</td>
+                    <td>@cliente.Celular</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

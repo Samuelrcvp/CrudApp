@@ -1,5 +1,6 @@
 ﻿using CrudApp.Data;
 using CrudApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CrudApp.Repositorio
 {
@@ -38,7 +39,8 @@ namespace CrudApp.Repositorio
         }
         public List<UsuarioModel> BuscarTodos()
         {
-            return _bancoContext.Usuarios.ToList();
+            return _bancoContext.Usuarios.Include(x => x.Clientes).ToList();
+                
         }
 
         public UsuarioModel Atualizar(UsuarioModel usuario)

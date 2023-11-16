@@ -12,11 +12,14 @@ namespace CrudApp.Controllers
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
         private readonly ISessao _sessao;
+        private readonly IClienteRepositorio _clienteRepositorio;
 
-        public UsuarioController(IUsuarioRepositorio usuarioRepositorio, ISessao sessao)
+        public UsuarioController(IUsuarioRepositorio usuarioRepositorio, ISessao sessao,
+                                  IClienteRepositorio clienteRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
-            _sessao = sessao;   
+            _sessao = sessao;
+            _clienteRepositorio = clienteRepositorio;
         }
 
         public IActionResult Index()
@@ -64,6 +67,12 @@ namespace CrudApp.Controllers
                 TempData["MensagemErro"] = $"Erro ao excluir usuário: {ex.Message}";
                 return RedirectToAction("Index");
             }
+        }
+
+        public IActionResult ListarClientesPorUsuarioId(int id)
+        {
+            List<ClienteModel> clientes = _clienteRepositorio.BuscarTodos(id);
+            return PartialView("_ClientesUsuario", clientes);
         }
 
         [HttpPost]

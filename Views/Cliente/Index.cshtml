@@ -7,9 +7,9 @@
         <a class="btn btn-primary" role="button" asp-controller="Cliente" asp-action="Criar">Adicionar novo cliente</a>
     </div>
 
-    <br/>
+    <br />
 
-    @if(TempData["MensagemSucesso"]!= null)
+    @if (TempData["MensagemSucesso"] != null)
     {
         <div class="alert alert-success" role="alert">
             @TempData["MensagemSucesso"]
@@ -27,7 +27,7 @@
 
     <h1 class="display-4">Listagem de clientes</h1>
 
-    <br/>
+    <br />
 
     <table class="table" id="table-clientes">
         <thead>
@@ -40,7 +40,7 @@
             </tr>
         </thead>
         <tbody>
-            @if(Model != null && Model.Any())
+            @if (Model != null && Model.Any())
             {
                 foreach (ClienteModel cliente in Model)
                 {
@@ -58,6 +58,6 @@
                     </tr>
                 }
             }
-            
+        </tbody>
     </table>
 </div>
