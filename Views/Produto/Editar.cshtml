@@ -1,0 +1,57 @@
+﻿@model ProdutoModel
+@{
+    ViewData["Title"] = "Editar produto";
+}
+<div class="text-center">
+
+    <h1 class="display-4">Editar produto</h1>
+
+</div>
+
+
+<form asp-controller="Produto" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp-for="Id"/>
+    <div class="mb-3">
+        <label for="nome">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do produto">
+        @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+
+    <div class="mb-3">
+        <label for="preco">Preço</label>
+        <input type="text" asp-for="Preco" class="form-control" placeholder="Digite o preço do produto">
+        @Html.ValidationMessageFor(x => x.Preco)
+    </div>
+
+    <div class="mb-3">
+        <label for="sku">SKU</label>
+        <input type="text" asp-for="Sku" class="form-control" placeholder="Digite o SKU do produto">
+        @Html.ValidationMessageFor(x => x.Sku)
+    </div>
+
+    <div class="mb-3">
+        <label for="descricao">Descrição</label>
+        <input type="text" asp-for="Descricao" class="form-control" placeholder="Digite a descrição do seu produto">
+        @Html.ValidationMessageFor(x => x.Descricao)
+    </div>
+
+    <div class="mb-3">
+        <label for="fornecedor">Fornecedor</label>
+        <input type="text" asp-for="Fornecedor" class="form-control" placeholder="Selecione o seu fornecedor">
+        @Html.ValidationMessageFor(x => x.Fornecedor)
+    </div>
+
+    <div class="mb-3">
+        <label for="imagem">Imagem</label>
+        <input type="text" asp-for="Imagem" class="form-control" placeholder="Insira a imagem do produto">
+        @Html.ValidationMessageFor(x => x.Imagem)
+    </div>
+
+
+
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Alterar</button>
+        <a class="btn btn-secondary " asp-controller="Produto" asp-action="Index" role="button">Voltar</a>
+    </div>
+</form>

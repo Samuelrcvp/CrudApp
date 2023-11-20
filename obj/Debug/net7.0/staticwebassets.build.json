@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h2X9mORo+Wu2a5FOY2f3WtY+ymrOXkco3cJYHRxFQaQ=",
+  "Hash": "1U15YzWg5eix3vqYFxYfxunEBC/huGuAR34aH2Ctd5s=",
   "Source": "CrudApp",
   "BasePath": "_content/CrudApp",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Documents\\Projetos Individuais\\CrudApp\\wwwroot\\IconeCamera.jpg",
+      "SourceId": "CrudApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Documents\\Projetos Individuais\\CrudApp\\wwwroot\\",
+      "BasePath": "_content/CrudApp",
+      "RelativePath": "IconeCamera.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\IconeCamera.jpg"
     },
     {
       "Identity": "C:\\Users\\user\\Documents\\Projetos Individuais\\CrudApp\\wwwroot\\js\\site.js",

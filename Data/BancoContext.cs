@@ -13,6 +13,7 @@ namespace CrudApp.Data
 
         public DbSet<ClienteModel> Clientes { get; set; }
         public DbSet<UsuarioModel> Usuarios { get; set; }
+        public DbSet<ProdutoModel> Produtos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
