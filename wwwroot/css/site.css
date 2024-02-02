@@ -24,3 +24,11 @@ body {
 .field-validation-error {
     color: red;
 }
+
+/* Tamanho maximo texto Produtos */
+.tamMax {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
